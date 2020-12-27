@@ -1,21 +1,98 @@
 #include <fcntl.h>
 #include "cub.h"
+#include <string.h>
 
 int main()
 {
     int i = 0;
     int fd  ;
-    char    *resolution;
     char    *line;
     char    **tab;
+    char    **tab1;
 
     fd = open("file.cub", O_RDONLY);
-    get_next_line(fd, &line);    
-    tab = ft_split(line, ' ');
-    if (tab[0][0] == 'R')
+    
+    while (get_next_line(fd, &line))
     {
-        g_data.height = ft_atoi(tab[1]);
-        g_data.width = ft_atoi(tab[2]);
+        int     i = 0;
+        tab = ft_split(line, ' ');
+        tab1 = ft_strdup(line);
+        if (!strcmp(tab[0], "SO") || !strcmp(tab[0], "NO") || !strcmp(tab[0], "WE") || !strcmp(tab[0], "EA") || !strcmp(tab[0], "S") || !strcmp(tab[0], "R"))
+        {
+            if (!strcmp(tab[0], "R"))
+            {
+                inf.height = ft_atoi(tab[1]);
+                inf.width =  ft_atoi(tab[2]);
+                printf("|%d | %d\n",inf.height,inf.width);
+            }
+            else if (!strcmp(tab[0], "NO"))
+            {
+                inf.nopath = tab[1];
+                printf("%s\n", inf.nopath);
+            }
+            else if (!strcmp(tab[0], "SO"))
+            {
+                inf.sopath = tab[1];
+                printf("%s\n", inf.sopath);
+            }
+            else if (!strcmp(tab[0], "WE"))
+            {
+                inf.wepath = tab[1];
+                printf("%s\n", inf.wepath);
+            }
+            else if (!strcmp(tab[0], "EA"))
+            {
+                inf.eapath = tab[1];
+                printf("%s\n", inf.eapath);
+            }
+            else if (!strcmp(tab[0], "S"))
+            {
+                inf.spath = tab[1];
+                printf("%s\n", inf.spath);
+            }
+        }
+        else if (!strcmp(tab[0], "F") || !strcmp(tab[0], "C"))
+        {
+            tab1 = ft_split(tab[1], ',');
+            if (!strcmp(tab[0], "F"))
+            {
+                inf.rf = ft_atoi(tab1[0]);
+                inf.gf = ft_atoi(tab1[1]);
+                inf.bf = ft_atoi(tab1[2]);
+                printf("%d\n%d\n%d\n", inf.rf, inf.gf, inf.bf);
+            }
+            else
+            {
+                inf.rc = ft_atoi(tab1[0]);
+                inf.gc= ft_atoi(tab1[1]);
+                inf.bc = ft_atoi(tab1[2]);
+                printf("%d\n%d\n%d\n", inf.rc, inf.gc, inf.bc);             
+            } 
+        }
+        else
+        {
+            inf.line = tab1;
+            printf("{%s}\n", inf.line);
+        }
     }
     return(0);
 }
+
+        /*tab = ft_split(line, ' ');
+    
+        printf("|%s|", tab[0]);
+        if (!strcmp(tab[0], "R"))
+        {
+            inf.height = ft_atoi(tab[1]);
+            inf.width =  ft_atoi(tab[2]);
+            printf("|%d | %d\n",inf.height,inf.width);
+        }
+        printf("|%d | %d\n",inf.height,inf.width);
+        else if (!strcmp(tab[0], "NO"))
+            printf("%s\n", tab[1]);
+        else if (!strcmp(tab[0], "SO"))
+            printf("%s\n", tab[1]);
+        else if (!strcmp(tab[0], "SO"))
+            printf("%s\n", tab[1]);
+        else if (!strcmp(tab[0], "SO"))
+            printf("%s\n", tab[1]);*/

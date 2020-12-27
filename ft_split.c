@@ -6,7 +6,7 @@
 /*   By: mamali <mamali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/27 23:51:01 by mamali            #+#    #+#             */
-/*   Updated: 2020/12/24 18:06:38 by mamali           ###   ########.fr       */
+/*   Updated: 2020/12/26 19:01:30 by mamali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static	char		**ft_free(char **f, size_t j)
 	return (NULL);
 }
 
-char				**ft_split(char const *s, char c)
+char				**ft_split(char *s, char c)
 {
 	size_t		i;
 	size_t		countw;
@@ -89,3 +89,15 @@ char				**ft_split(char const *s, char c)
 	p[countw] = NULL;
 	return (p);
 }
+/*
+int		main()
+{
+	int	i = 0;
+	char	**s;
+	s = ft_split("reda amali mohammed", ' ');
+	while (i < 3)
+		printf("%s\n", s[i++]);
+	return (0);
+}
+*/
+

@@ -1,6 +1,16 @@
-#include "mlx.h"
-#define WIN_SIZE 500
-#include "get_next_line.h"
+#ifndef CUB3D_H
+# define CUB3D_H
+
+# include <mlx.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <fcntl.h>
+# include <math.h>
+# include "./get_next_line/get_next_line.h"
+
+# define WIN_SIZE 500
 
 typedef struct s_data
 {
@@ -27,3 +37,5 @@ int			        ft_atoi(const char *str);
 char	            *ft_substr(char const *s, unsigned int start, size_t len);
 int		            ft_strlen(const char *s);
 int		            ft_strcmp(char *s1, char *s2);
+
+#endif

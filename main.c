@@ -4,19 +4,18 @@
 
 int main()
 {
-    int i = 0;
-    int fd  ;
+    int     fd;
     char    *line;
     char    **tab;
     char    **tab1;
+    char    *tab2;
 
     fd = open("file.cub", O_RDONLY);
     
     while (get_next_line(fd, &line))
     {
-        int     i = 0;
         tab = ft_split(line, ' ');
-        tab1 = ft_strdup(line);
+        tab2 = ft_strdup(line);
         if (!strcmp(tab[0], "SO") || !strcmp(tab[0], "NO") || !strcmp(tab[0], "WE") || !strcmp(tab[0], "EA") || !strcmp(tab[0], "S") || !strcmp(tab[0], "R"))
         {
             if (!strcmp(tab[0], "R"))
@@ -71,28 +70,11 @@ int main()
         }
         else
         {
-            inf.line = tab1;
+            inf.line = tab2;
             printf("{%s}\n", inf.line);
         }
     }
+    tab2 = ft_strdup(line);
+    printf("{%s}\n", inf.line);
     return(0);
 }
-
-        /*tab = ft_split(line, ' ');
-    
-        printf("|%s|", tab[0]);
-        if (!strcmp(tab[0], "R"))
-        {
-            inf.height = ft_atoi(tab[1]);
-            inf.width =  ft_atoi(tab[2]);
-            printf("|%d | %d\n",inf.height,inf.width);
-        }
-        printf("|%d | %d\n",inf.height,inf.width);
-        else if (!strcmp(tab[0], "NO"))
-            printf("%s\n", tab[1]);
-        else if (!strcmp(tab[0], "SO"))
-            printf("%s\n", tab[1]);
-        else if (!strcmp(tab[0], "SO"))
-            printf("%s\n", tab[1]);
-        else if (!strcmp(tab[0], "SO"))
-            printf("%s\n", tab[1]);*/

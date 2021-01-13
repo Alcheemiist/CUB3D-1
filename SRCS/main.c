@@ -1,48 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamali <mamali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 19:35:49 by mamali            #+#    #+#             */
-/*   Updated: 2021/01/13 19:22:46 by mamali           ###   ########.fr       */
+/*   Updated: 2021/01/13 19:38:53 by mamali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub.h"
-
-int ft_strlen(char *str)
-{
-    int i = 0;
-    while (str[i])
-        i++;
-    return (i);
-}
-
-int	quit(void)
-{
-	exit(1);
-	return (-1);
-}
-
-int	ft_puterror(char *error)
-{
-	char *e;
-	e = "\033[1;31m Error\n >> \033[0;31m";
-	write(1, e, ft_strlen(e));
-	write(1, error, ft_strlen(error));
-	write(1, "\n", 1);
-	return (quit());
-}
-
-typedef struct s_data {
-    void    *img;
-    char    *addr;
-    int     bits_per_pixel;
-    int     line_length;
-    int     endian;   
-}           t_data;
+#include "../include/cub3D.h"
 
 int     main(int    argc, char **argv)
 {

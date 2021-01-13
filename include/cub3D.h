@@ -8,7 +8,8 @@
 # include <string.h>
 # include <fcntl.h>
 # include <math.h>
-# include "./get_next_line/get_next_line.h"
+# include "../get_next_line/get_next_line.h"
+# include "../libft/libft.h"
 
 # define WIN_SIZE 500
 
@@ -30,12 +31,17 @@ typedef struct s_data
     char    *line;
 }               t_data;
 
+typedef struct s_data {
+    void    *img;
+    char    *addr;
+    int     bits_per_pixel;
+    int     line_length;
+    int     endian;   
+}           t_data;
+
 t_data inf;
 
-char				**ft_split(char *s, char c);
-int			        ft_atoi(const char *str);
-char	            *ft_substr(char const *s, unsigned int start, size_t len);
-int		            ft_strlen(const char *s);
-int		            ft_strcmp(char *s1, char *s2);
+int	ft_puterror(char *error);
+int	quit(void);
 
 #endif

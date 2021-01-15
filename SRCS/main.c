@@ -6,7 +6,7 @@
 /*   By: mamali <mamali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 19:35:49 by mamali            #+#    #+#             */
-/*   Updated: 2021/01/15 19:53:09 by mamali           ###   ########.fr       */
+/*   Updated: 2021/01/15 19:55:56 by mamali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int     main(int    argc, char **argv)
     mlx = mlx_init();
     mlx_window = mlx_new_window(mlx, 500, 500, "HELLO WORLD!");*/
     //mlx_pixel_put(mlx, mlx_window, 250, 250, 0xFFFFFF);
+    //gcc *.c ../libft/*.c ../get_next_line/*.c
     /*img.img = mlx_new_image(mlx, WIN_SIZE, WIN_SIZE);
     img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
     img.img[500] = 0xFFFFFF;

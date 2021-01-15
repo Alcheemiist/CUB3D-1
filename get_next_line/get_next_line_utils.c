@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamali <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mamali <mamali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/23 21:21:22 by mamali            #+#    #+#             */
-/*   Updated: 2019/11/25 15:48:23 by mamali           ###   ########.fr       */
+/*   Updated: 2021/01/15 19:48:58 by mamali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "get_next_line.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -98,3 +99,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	p[k] = '\0';
 	return (p);
 }
+*/

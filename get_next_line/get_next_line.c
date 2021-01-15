@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamali <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mamali <mamali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 17:35:16 by mamali            #+#    #+#             */
-/*   Updated: 2019/11/25 15:53:24 by mamali           ###   ########.fr       */
+/*   Updated: 2021/01/15 19:49:35 by mamali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+static char	*ft_strcpy2(char *dest, char *src)
+{
+	int		i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
 
 char	*fct(char *save, char **line)
 {
@@ -23,7 +37,7 @@ char	*fct(char *save, char **line)
 		{
 			*str = '\0';
 			*line = ft_strdup(save);
-			ft_strcpy(save, ++str);
+			ft_strcpy2(save, ++str);
 		}
 		else
 		{

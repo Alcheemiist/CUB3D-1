@@ -15,22 +15,12 @@
 
 typedef struct s_data
 {
-    int     height;
-    int     width;
-    char    *nopath;
-    char    *sopath;
-    char    *wepath;
-    char    *eapath;
-    char    *spath;
-    int     rf;
-    int     gf;
-    int     bf;
-    int     rc;
-    int     gc;
-    int     bc;
-    char    *line;
+    int     xresolution;
+    int     yresolution;
 }               t_data;
 
+t_data          g_inf;
+/*
 typedef struct s_data {
     void    *img;
     char    *addr;
@@ -38,10 +28,13 @@ typedef struct s_data {
     int     line_length;
     int     endian;   
 }           t_data;
+*/
 
-t_data inf;
+char    **format;
 
-int	ft_puterror(char *error);
-int	quit(void);
+int	    ft_puterror(char *error);
+int	    quit(void);
+void    treat_resolution(int    fd, char    *line);
+int     check_if_valid_resolution(int    fd, char    *line);
 
 #endif

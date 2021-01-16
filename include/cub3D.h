@@ -30,11 +30,8 @@ typedef struct s_data {
 }           t_data;
 */
 
-char    **format;
-
 int	    ft_puterror(char *error);
 int	    quit(void);
 void    treat_resolution(int    fd, char    *line);
-int     check_if_valid_resolution(int    fd, char    *line);
 
 #endif

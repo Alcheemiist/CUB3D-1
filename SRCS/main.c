@@ -6,7 +6,7 @@
 /*   By: mamali <mamali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 19:35:49 by mamali            #+#    #+#             */
-/*   Updated: 2021/01/15 19:55:56 by mamali           ###   ########.fr       */
+/*   Updated: 2021/01/16 19:40:57 by mamali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,12 @@ int     main(int    argc, char **argv)
     int     fd;
     int     i;
     char    *line;
-    
+    printf(">>>%d\n", argc);
     if (argc != 2)
         return(ft_puterror("you should have at least 2 or 3 arguments!"));
     if (!(fd = open(argv[1], O_RDONLY))) // still to check file is valid means it end ".cub"
         return(ft_puterror("invalid file"));
-    while ((i = get_next_line(fd, &line)) >= 0) 
-    {
-        treat_resolution(fd, line);  
-    }
+    treat_resolution(fd, line);
     /*
     void*       mlx_window;
     void*       mlx;

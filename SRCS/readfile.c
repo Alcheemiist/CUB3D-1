@@ -46,6 +46,8 @@ void    readfile(int    argc, char    **argv)
     while (i != 0)
     {
         i = get_next_line(fd, &line);
+        if (i < 0)
+             break;
         checkLine(line);
     }
        /* int     i;

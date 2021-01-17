@@ -14,15 +14,7 @@
 
 int     main(int    argc, char **argv)
 {
-    int     fd;
-    int     i;
-    char    *line;
-    printf(">>>%d\n", argc);
-    if (argc != 2)
-        return(ft_puterror("you should have at least 2 or 3 arguments!"));
-    if (!(fd = open(argv[1], O_RDONLY))) // still to check file is valid means it end ".cub"
-        return(ft_puterror("invalid file"));
-    treat_resolution(fd, line);
+    readfile(argc, argv);
     /*
     void*       mlx_window;
     void*       mlx;

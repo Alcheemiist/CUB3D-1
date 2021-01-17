@@ -1,23 +1,22 @@
 NAME		=		cub3D
 
-SRCS		=		*/*.c */*/*.c
+SRCS		=		SRCS/*.c
 
-OBJS		=		*.o
+LIBFT 		= 		./mylibft/libft.a
 
-all: $(NAME)
+INCLUDE = -I ./mylibft/libft.h -I ./include/cub3D.h -I /usr/local/include
 
-$(NAME): $(SRCS)
-	gcc -Wall -Wextra -Werror -c $(SRCS)
-	gcc $(OBJS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+GCC = gcc -Wall -Wextra -Werror -c $(SRCS) 
+MLX = -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit
 
-bonus: $(NAME)
+all:
+
+	make -C mylibft
+	$(GCC) $(INCLUDE) $(SRCS) $(LIBFT) -o $(NAME)
 
 clean:
-	rm -rf $(OBJS)
+
 
 fclean: clean
-	rm -rf $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re

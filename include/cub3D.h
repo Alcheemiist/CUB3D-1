@@ -1,25 +1,25 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include <mlx.h>
+//# include <mlx.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
 # include <math.h>
-# include "../get_next_line/get_next_line.h"
-# include "../libft/libft.h"
+# include "../mylibft/libft.h"
 
 # define WIN_SIZE 500
 
 typedef struct s_data
 {
-    int     xresolution;
-    int     yresolution;
+    int     xResolution;
+    int     yResolution;
 }               t_data;
 
-t_data          g_inf;
+t_data          g_info;
+
 /*
 typedef struct s_data {
     void    *img;
@@ -30,8 +30,14 @@ typedef struct s_data {
 }           t_data;
 */
 
-int	    ft_puterror(char *error);
-int	    quit(void);
-void    treat_resolution(int    fd, char    *line);
+void	    ft_puterror(char *error);
+void    readfile(int    argc, char    **argv);
+void    checkArgs(int  argc, char  **argv);
+void    checkSecArg(char   *argv);
+void    checkExtension(char *argv);
+void    checkArgsNumber(int     argc);
+void    checkLine(char  *line);
+int     lineIsDigit(char    **str);
+void    getResolution(char     *line);
 
 #endif
